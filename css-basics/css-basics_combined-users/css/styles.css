@@ -64,6 +64,25 @@ li {
   margin: 0;
 }
 
+aside .user {
+  max-width: 250px;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+aside .user .name {
+  font-size: 16px;
+}
+
+aside .user .bio {
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+aside .user .location {
+  font-size: 10px;
+}
+
 /*
   Part 1
 
@@ -83,6 +102,8 @@ li {
   This triggers visual helper styles from 'debug.css' that outline structural elements
   like <body>, <main>, <aside>, <ul>, and .user with labeled overlays for easy identification.
 */
+
+
 
 /*
   Part 2
