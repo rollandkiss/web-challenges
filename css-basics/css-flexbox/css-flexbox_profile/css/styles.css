@@ -25,11 +25,19 @@ h2 {
   aspect-ratio: 1 / 1;
   border: solid #3f0097 1px;
   max-width: 50%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
 }
 
 .tech-stack__list {
   list-style: none;
   padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .tech-stack__list-item {
