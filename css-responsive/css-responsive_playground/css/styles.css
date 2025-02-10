@@ -62,8 +62,8 @@ h1 {
 .box--one {
   background-color: lightblue;
 
-  width: 100px;
-  height: 100px;
+  width: 50%;
+  height: 100%;
 }
 
 .box--two {
@@ -72,6 +72,19 @@ h1 {
   width: 100px;
   height: 100px;
 }
+/* Media Queries für display-größen , 
+verhält sich wie ein selektor mit auswirkung auf einen anderen selektor  */
+  @media (min-width: 600px) {
+    .box--two { 
+      width: 200px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .box--two {
+      width: 400px;
+    }
+  }
 
 .box--three {
   background-color: lightpink;
@@ -80,11 +93,24 @@ h1 {
   height: 250px;
 }
 
+@media (orientation: landscape) {
+    .box--three {
+      width: 70%;
+    }
+}
+
 .box--four {
   background-color: lightgray;
 
   width: 100px;
   height: 100px;
+}
+
+/* Dark mode nur aus system ui wird berücksichtigt*/
+@media (prefers-color-scheme: dark) {
+  .box--four {
+    background-color: green;
+  }
 }
 
 .box--five {
