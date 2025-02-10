@@ -1,0 +1,9 @@
+@import url("./theme.css");
+
+@import url("./global/global.css");
+
+@import url("./components/header.css");
+
+@import url("./components/main.css");
+
+@import url("./components/card.css");
