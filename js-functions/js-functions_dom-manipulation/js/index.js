@@ -17,6 +17,8 @@ redButton.addEventListener("click", () => {
     - remove all classes
     - then add the class name: "red"
   */
+    removeAllColors();
+  addColor(redButton.textContent);
 });
 
 blueButton.addEventListener("click", () => {
@@ -25,6 +27,8 @@ blueButton.addEventListener("click", () => {
     - remove all classes
     - then add the class name: "blue"
   */
+    removeAllColors();
+    addColor(blueButton.textContent);
 });
 
 greenButton.addEventListener("click", () => {
@@ -33,6 +37,8 @@ greenButton.addEventListener("click", () => {
     - remove all classes
     - then add the class name: "green"
   */
+    removeAllColors();
+    addColor(greenButton.textContent);
 });
 
 grayButton.addEventListener("click", () => {
@@ -41,6 +47,26 @@ grayButton.addEventListener("click", () => {
     - remove all classes
     - then add the class name: "gray"
   */
+    removeAllColors();
+    addColor(grayButton.textContent);
 });
 
 // Write your two functions below:
+function removeAllColors() {
+  box.classList.remove("red");
+  box.classList.remove("blue");
+  box.classList.remove("green");
+  box.classList.remove("gray");
+}
+
+function addColor(color) {
+  box.classList.add(color);
+}
+
+
+// let buttonObject = document.querySelector(`[data-js=js-${color}-button]`);
+// let buttonObjectColor = buttonObject.textContent;
+
+// function colorSwitch() {
+//   box.classList
+// }
