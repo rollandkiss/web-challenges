@@ -9,7 +9,10 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+let bookTitle = "The big Ass";
+let bookAuthor = "Gatsby";
+let bookRating = 8.2;
+let bookNumSold = 100000;
 // --^-- write your code here --^--
 
 /*
@@ -27,7 +30,26 @@ Then:
 */
 
 // --v-- write your code here --v--
+function logPrint(name) {
+  console.log(name);
+}
 
+logPrint(bookTitle);
+logPrint(bookAuthor);
+logPrint(bookRating);
+logPrint(bookNumSold);
+
+function funcModVal (chgVal) {
+  return chgVal + 1;
+}
+
+bookNumSold = funcModVal(bookNumSold);
+bookRating = funcModVal(bookRating);
+
+logPrint(bookTitle);
+logPrint(bookAuthor);
+logPrint(bookRating);
+logPrint(bookNumSold);
 // --^-- write your code here --^--
 
 /*
@@ -40,5 +62,6 @@ Then:
 */
 
 // --v-- write your code here --v--
+// see above
 
 // --^-- write your code here --^--
