@@ -9,5 +9,59 @@
     <title>Personal Profile Form</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <h1 id=personalinfo__title"">
+      Create your Personal Profile
+    </h1>
+    <fieldset>
+    <p id="personalinfo__description">
+      We want to get you know! Please enter your personal information.
+    </p>
+    <form aria-labelledby="personalinfo__title" aria-describedby="personalinfo__description">
+      <fieldset aria-label="Area of Personal Data" label="Personal Information">
+        <Legend>Personal Information</Legend>
+        
+        <label for="personalinfo__firstname">First Name:</label>
+        <input type="text" id="personalinfo__firstname" aria-label="Enter your First Name" placeholder="Enter your First Name" required>
+        
+        <label for="personalinfo__lastname">Last Name:</label>
+        <input type="text"  id="personalinfo__lastname" aria-label="Enter your Last Name" placeholder="Enter your Last name" required>
+
+        <label for="personalinfo__birthday">Your Birthday:</label>
+        <input type="date" id="personalinfo__birthday" aria-label="Enter your Birthday" placeholder="Enter your Birthday" required>
+      </fieldset>
+      
+      <p id="personalinfo__description-question">
+        Can you tell us a little bit more? We want to annoy you with unwanted ads.
+      </p>
+      
+      <fieldset>
+        <legend>Further Information</legend>
+
+        <label for="personalinfo__color">Favourite Color:</label>
+        <input type="color" id="personalinfo__color" aria-label="Select your Color" placeholder="Select your Color" value="#E5430F">
+
+        <label for="personalinfo__pet">What's your favourite pet?</label>
+        <select id="personalinfo__pet">
+          <option value="">
+            --Please choose an option--
+          </option>
+          <option value="fried-chicken">
+            Fired Chicken
+          </option>
+          <option value="asshole-bunny">
+            Asshole Bunny
+          </option>
+          <option value="speed-turtle">
+            Speed Turtle
+          </option>
+        </select>
+      </fieldset>
+
+      <button type="submit">
+        Submit
+      </button>
+    </form>
+    </fieldset>
+  </body>
 </html>
