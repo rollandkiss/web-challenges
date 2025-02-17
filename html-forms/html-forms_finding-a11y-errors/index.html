@@ -10,22 +10,30 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <h1 class="title">Understanding A11y in Forms</h1>
+    <h1 id="title" class="title">Understanding A11y in Forms</h1>
     <p id="description">
       Please let us know how we can support you with a11y issues.
     </p>
 
-    <form for="title">
-      <fieldset>
-        <legend>Enter your information</legend>
-        <label>Name:</label>
-        <input id="name-Input" type="text" />
-        <label>Age:</label>
-        <input id="age-Input" type="text" />
-        <label>Color you cannot see:</label>
-        <input id="color-Input" type="color" />
-        <textarea rows="7" placeholder="Leave us a message..."></textarea>
-        <button type="submit">Submit</button>
+    <form for="title" aria-labelledby="title">
+      <fieldset for="description" aria-describedby="description">
+        <legend aria-label="Enter your information">Enter your information</legend>
+        
+        <label for="name-Input">Name:</label>
+        <input id="name-Input" type="text" aria-label="Input Name" placeholder="Input Name"/>
+        
+        <label for="age-Input">Age:</label>
+        <input id="age-Input" type="number" aria-label="Input Age" placeholder="Input Age" />
+        
+        <label for="color-Input">Color you cannot see:</label>
+        <input id="color-Input" type="color" aria-label="Select Color"/>
+
+        <label for="message-Textarea">Leave us a message:</label>
+        <textarea id="message-Textarea" rows="7" aria-label="Leave us a message..." placeholder="Leave us a message..."></textarea>
+        
+        <button type="submit" aria-label="Submit Form">
+          Submit
+        </button>
       </fieldset>
     </form>
   </body>
