@@ -13,17 +13,17 @@
   <body>
     <main>
       <h1>Service</h1>
-      <h2>Customer Complaint Form</h2>
-      <p>
+      <h2 id="form__title">Customer Complaint Form</h2>
+      <p id="form__description">
         Fill out this form to complain to customer support about our poor
         service. Please note that due to an increased volume of requests, it
         currently takes us several months to respond to your request.
       </p>
-      <p>
+      <p id="form__description_intended_use">
         <strong>Note:</strong> This form is not intended to be used for any
         other purpose than to complain to customer support.
       </p>
-      <form data-js="form">
+      <form data-js="form" aria-labelledby="form__title" aria-describedby="form__description">
         <fieldset>
           <legend>Personal Information</legend>
           <label for="first-name">First Name</label>
@@ -32,6 +32,9 @@
             name="firstName"
             id="first-name"
             placeholder="Your first name"
+            required
+            minlength="4"
+            maxlength="30"
           />
 
           <label for="last-name">Last Name</label>
@@ -40,13 +43,16 @@
             name="lastName"
             id="last-name"
             placeholder="Your last name"
+            required
+            minlength="4"
+            maxlength="30"
           />
 
           <label for="age">Age</label>
-          <input type="number" name="age" id="age" />
+          <input type="number" name="age" id="age" min="14"/>
 
           <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
+          <input type="email" name="email" id="email" required/>
         </fieldset>
 
         <fieldset>
@@ -90,6 +96,7 @@
               type="checkbox"
               name="terms-of-service"
               id="terms-of-service"
+              required
             />
             I have read the terms of service and agree to sell my soul
             <a
