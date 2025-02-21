@@ -19,4 +19,25 @@ const colors = [
   "#A5A5A5",
 ];
 
-colors.forEach();
+colors.forEach((color) => {
+  const newDiv = document.createElement("div");
+  document.body.append(newDiv);
+
+  newDiv.setAttribute("class", "color-box");
+  // newDiv.style.backgroundColor = color;  // mit styles ist der standard um inline styles zu setzen
+  newDiv.setAttribute("style", `background-color: ${color}`); // setAttribute muss das style attribut mit entsprechendem key-value pair gesetzt werden
+});
+
+function renderColorBox(color) {
+  // Deklaration der Variable - HTML Element erstellen
+  const newDiv = document.createElement("div");
+
+  // Erstelltes Element positionieren
+  document.body.append(newDiv);
+
+  // Attribute setzen
+  newDiv.setAttribute("class", "color-box");
+  newDiv.setAttribute("style", `background-color: ${color}`);
+}
+
+colors.forEach(renderColorBox); // mit function reference ausführen - forEach
