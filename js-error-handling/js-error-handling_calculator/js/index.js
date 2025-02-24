@@ -1,5 +1,5 @@
 console.clear();
-
+// Declartions
 const form = document.querySelector("form");
 const output = form.querySelector("output");
 
@@ -15,10 +15,16 @@ const operations = {
   },
 };
 
+// Actions
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const firstNumber = Number(event.target.firstNumber.value);
-  const secondNumber = Number(event.target.secondNumber.value);
-  const operation = event.target.operation.value;
-  output.innerText = operations[operation](firstNumber, secondNumber);
+  try {
+    const firstNumber = Number(event.target.firstNumber.value);
+    const secondNumber = Number(event.target.secondNumber.value);
+    const operation = event.target.operation.value;
+    output.innerText = operations[operation](firstNumber, secondNumber);
+  } catch (error) {
+    const errorMessage = document.querySelector('[class="error"]');
+    errorMessage.textContent = error;
+  }
 });
