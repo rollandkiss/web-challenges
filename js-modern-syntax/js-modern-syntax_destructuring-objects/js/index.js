@@ -12,6 +12,10 @@ const company = {
   location: "Hamburg",
 };
 
+let { name: courseName } = company;
+console.log(courseName);
+
+export { courseName };
 // Example: export const { value1 } = myObject;
 
 /*
@@ -26,6 +30,10 @@ Use destructuring to extract the following:
 
 const user = { name: "John", years: 30 };
 
+let { name: userName, years: userAge, isAdmin = false } = user;
+console.log("Name:", userName, ", Age:", userAge, ", AdminStatus:", isAdmin);
+
+export { userName, userAge, isAdmin };
 /*
 EXERCISE 3
 Extract properties from the dog object and
@@ -37,6 +45,11 @@ const dog = {
   breed: "husky",
   age: 5,
 };
+
+let { name: dogName, breed: dogBreed, age: dogAge } = dog;
+console.log(dogName, dogBreed, dogAge);
+
+export { dogName, dogBreed, dogAge };
 
 /*
 EXERCISE 4
@@ -50,6 +63,10 @@ const person = {
   firstName: "Alex",
 };
 
+let { lastName: personLastName, ...moreInformation } = person;
+console.log(personLastName, moreInformation);
+
+export { personLastName, moreInformation };
 /*
 EXERCISE 5
 Refactor the following function to use destructuring assignment for the
@@ -57,11 +74,16 @@ three variables `name`, `country` and `numPeople`.
 Hint: You may need to rename one property during destructuring.
 */
 
-export function logInfo(city) {
-  const name = city.name;
-  const country = city.country;
-  const numPeople = city.population;
+// export function logInfo(city) {
+//   const name = city.name;
+//   const country = city.country;
+//   const numPeople = city.population;
 
+//   return `${name} is in ${country} and has ${numPeople} inhabitants in it.`;
+// }
+
+function logInfo(city) {
+  let { name, country, population: numPeople } = city;
   return `${name} is in ${country} and has ${numPeople} inhabitants in it.`;
 }
 
@@ -69,3 +91,5 @@ export function logInfo(city) {
 console.log(
   logInfo({ name: "Marseille", country: "France", population: 861635 })
 );
+
+export { logInfo };
