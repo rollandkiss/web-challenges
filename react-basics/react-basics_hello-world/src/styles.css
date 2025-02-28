@@ -9,3 +9,7 @@ body {
   font-family: system-ui;
   text-align: center;
 }
+
+h1 {
+  font-size: 100px;
+}
