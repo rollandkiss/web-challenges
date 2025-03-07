@@ -1,3 +1,9 @@
+import { SumValues } from "../components/SumValues";
+
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  return (
+    <>
+      <SumValues valueA={6} valueB={7}></SumValues>
+    </>
+  );
 }
