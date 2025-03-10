@@ -1,5 +1,6 @@
 // Imports
 import { Navigation } from "./Navigation";
+import { Image } from "./Image";
 
 // Header Function
 function Header({ className, children }) {
@@ -7,7 +8,7 @@ function Header({ className, children }) {
     <>
       <header className={className}>
         <a href="#">
-          <img className="round-image" src={children.logo} alt="logo" />
+          <Image className="round-image" src={children.logo} alt="logo"></Image>
         </a>
         <Navigation>{{ navClass: "navigation__link" }}</Navigation>
         <button
@@ -15,7 +16,11 @@ function Header({ className, children }) {
           onClick={() => console.log("I could toggle a profile!")}
           aria-label="toggle profile"
         >
-          <img className="round-image" src={children.avatar} alt="avatar" />
+          <Image
+            className="round-image"
+            src={children.avatar}
+            alt="avatar"
+          ></Image>
         </button>
       </header>
     </>
