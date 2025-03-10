@@ -1,3 +1,21 @@
+import { Button } from "../components/Button";
+
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  // Function to raise alert on Click-Event
+  function handleClick() {
+    alert("Kick me hardest");
+  }
+  return (
+    <>
+      <Button
+        disabled={false}
+        text="Gib Arschtritt"
+        colorHex={"#0000ff"}
+        // onClick={() => {
+        //   console.log("You kicked me hard");
+        // }}
+        onClick={handleClick}
+      ></Button>
+    </>
+  );
 }
