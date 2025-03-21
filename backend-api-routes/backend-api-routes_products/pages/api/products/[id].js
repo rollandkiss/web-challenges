@@ -8,8 +8,8 @@ export default function handler(request, response) {
   const { id } = request.query;
 
   // Dirty Rest
-  if (!id) {
-    response.status(404).json({ status: "page not found" });
+  if (!getProductById(id)) {
+    response.status(404).json({ name: "error-message: product not found" });
     return;
   }
 
