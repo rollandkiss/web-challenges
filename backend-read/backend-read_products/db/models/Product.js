@@ -14,7 +14,7 @@ const fishShopSchema = new Schema({
 
 // CONCRETE MODEL
 const fishModel =
-  mongoose.models.products || mongoose.model("products", fishShopSchema);
+  mongoose.models.products || mongoose.model("products", fishShopSchema); // Mongoose erwartet singular definierte colletcions, hier: products > Product // beides geht
 
 // EXPORTS
 export default fishModel;
