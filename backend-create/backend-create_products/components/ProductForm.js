@@ -1,12 +1,28 @@
+// IMPORTS
 import styled from "styled-components";
 import StyledButton from "@/components/Button";
+import { mutate } from "swr";
 
 export default function ProductForm() {
   async function handleSubmit(event) {
+    // Verhindert Standardverhalten von Submission und reload der HTML Seite
     event.preventDefault();
 
+    // Lesen der Formulardaten
     const formData = new FormData(event.target);
     const productData = Object.fromEntries(formData);
+
+    // Data Fetch für interne API: "/api/products" mit übergabe der POST-relevanten Objektinhalte
+    const response = await fetch("/api/products", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(productData),
+    });
+
+    // Vorgang des Response schreibens "erfolgreich" lässt mittels "mutate"-methode von "swr" die Seite refresh'n
+    if (response.ok) {
+      mutate("/api/products");
+    }
   }
 
   return (
@@ -37,6 +53,7 @@ export default function ProductForm() {
   );
 }
 
+// EXPORTS
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
